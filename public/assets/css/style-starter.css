@@ -12757,3 +12757,10 @@ button.owl-next {
 .slips > div {
     padding-left: 10px;
 }
+
+.lk-form > div > label {
+    padding-left: 0;
+}
+.lk-form > div > span {
+    font-weight: bold;
+}

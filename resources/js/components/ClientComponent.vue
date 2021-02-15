@@ -54,43 +54,39 @@
                                          Ввод показаний открыт с {{ check_day_start }} по {{ check_day_end }} число.
                                      </label>
                                     <div class="row form-group">
-                                        <div class="col-4">
-                                            <strong>
-                                                Счетчик
-                                            </strong>
+                                        <div class="col-md-4 d-none d-sm-block">
+                                                Счетчик (Тип)
                                         </div>
-                                        <div class="col-2">
-                                            <strong>
-                                                Тип
-                                            </strong>
-                                        </div>
-                                        <div class="col-3">
-                                            <strong>
+                                        <div class="col-md-4 d-none d-sm-block">
                                                 Предыдущее показание
-                                            </strong>
                                         </div>
-                                        <div class="col-3">
-                                            <strong>
+                                        <div class="col-md-4 d-none d-sm-block">
                                                 Текущее показание
-                                            </strong>
                                         </div>
                                     </div>
-                                    <div class="row form-group"
+                                    <div class="row form-group lk-form"
                                          v-for="(device, index) in customer.devices" :key="index">
-                                        <div class="col-4">
+
+                                        <div class="col-md-4">
+                                            <label class="col-sm-6 d-lg-none d-ld-block">
+                                                Счетчик (Тип)
+                                            </label>
                                             <span>
-                                            {{ device.toolid }}
+                                                {{ device.toolid }} ({{ device.tooltype }})
                                             </span>
                                         </div>
-                                        <div class="col-2">
+                                        <div class="col-md-4">
+                                            <label class="col-sm-6 d-lg-none d-ld-block">
+                                                Предыдущее показание
+                                            </label>
                                             <span>
-                                                {{ device.tooltype }}
+                                                {{ device.value_old}}
                                             </span>
                                         </div>
-                                        <div class="col-3">
-                                            {{ device.value_old}}
-                                        </div>
-                                        <div class="col-3">
+                                        <div class="col-md-3">
+                                            <label class="col-sm-6 d-lg-none d-ld-block">
+                                                Текущее показание
+                                            </label>
                                             <input class="form-control"
                                                    required
                                                    v-if="curr_day>=check_day_start && curr_day<=check_day_end"
