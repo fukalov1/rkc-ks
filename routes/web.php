@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\App;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +14,6 @@ use Illuminate\Support\Facades\App;
 |
 */
 
-$env = App::environment();
 
 Route::get('/', function () {
     return view('index');
@@ -25,11 +23,11 @@ Route::get('about', function () {
     return view('about');
 });
 
-Route::get('customer', function () use ($env) {
+Route::get('customer', function () {
     return view('customer', [
         'qr_auth' => 0,
-        'check_day_start' => $env('CHECK_DAY_START', 20),
-        'check_day_end' => $env('CHECK_DAY_END', 25),
+        'check_day_start' => env('CHECK_DAY_START', 20),
+        'check_day_end' => env('CHECK_DAY_END', 25),
         ]);
 });
 
