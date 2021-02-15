@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,10 +25,13 @@ Route::get('about', function () {
 });
 
 Route::get('customer', function () {
+
+    $settings = Setting::pluck('value', 'name')->all();
+
     return view('customer', [
         'qr_auth' => 0,
-        'check_day_start' => \config('site.check_day_start'),
-        'check_day_end' => \config('site.check_day_end'),
+        'check_day_start' => $settings['check_day_start'],
+        'check_day_end' => $settings['check_day_end'],
         ]);
 });
 
