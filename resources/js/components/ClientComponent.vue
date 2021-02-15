@@ -27,6 +27,10 @@
                         </div>
                         <div class="row">
                             <div class="col-12 text-center form-group">
+
+                            </div>
+                        </div><div class="row">
+                            <div class="col-12 text-center form-group">
                                 <button class="btn btn-success">
                                     войти
                                 </button>
@@ -158,8 +162,8 @@
         },
         data() {
             return {
-                account: '10657215016',
-                code: '29623',
+                account: null,
+                code: null,
                 auth: this.qr_auth,
                 success: false,
                 message: null,
