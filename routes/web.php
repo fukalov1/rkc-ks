@@ -26,7 +26,7 @@ Route::get('about', function () {
 Route::get('customer', function () {
     return view('customer', [
         'qr_auth' => 0,
-        'check_day_start' => env('CHECK_DAY_START', 20),
+        'check_day_start' => env('CHECK_DAY_START', 15),
         'check_day_end' => env('CHECK_DAY_END', 25),
         ]);
 });
