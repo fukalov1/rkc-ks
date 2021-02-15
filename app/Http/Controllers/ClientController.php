@@ -60,7 +60,7 @@ class ClientController extends Controller
         return $data;
     }
 
-    public function authQR(ClientRequest $request)
+    public function authQR(Request $request)
     {
         $env = App::environment();
 
