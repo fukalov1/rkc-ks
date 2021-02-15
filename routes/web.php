@@ -42,7 +42,7 @@ Route::get('news', function () {
     return view('news');
 });
 
-Route::post('/qr/{account}/{code}', [ClientController::class, 'authQR']);
+Route::get('/qr/{account}/{code}', [ClientController::class, 'authQR']);
 
 Route::group(['prefix' => 'data'], function() {
     Route::post('/auth', [ClientController::class, 'auth']);
