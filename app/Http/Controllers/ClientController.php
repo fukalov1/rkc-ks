@@ -7,7 +7,6 @@ use App\Http\Requests\ClientRequest;
 use App\Models\Client;
 use App\Models\RkcLs;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 
 class ClientController extends Controller
 {
@@ -60,9 +59,38 @@ class ClientController extends Controller
         return $data;
     }
 
+    public function existAuth()
+    {
+        $client = $this->client
+            ->where('clientid', session('clientid'))
+            ->first();
+
+        if ($client) {
+            $data = [
+                'auth' => true,
+                'customer' => [
+                    'clientname' => $client->clientname,
+                    'devices' => $client->where('clientid', $client->clientid)->get()
+                ]
+            ];
+        }
+        else {
+            $data = [
+                'auth' => false,
+                'message' => 'Клиент не найден!'
+            ];
+        }
+
+        return $data;
+    }
+
+
     public function authQR(Request $request)
     {
-        $env = App::environment();
+       $check_day_start = \config('site.check_day_start');
+       $check_day_end = \config('site.check_day_end');
+
+//       dd($check_day_start, $check_day_end);
 
         $account = $request->account;
         $code = $request->code;
@@ -74,17 +102,18 @@ class ClientController extends Controller
 
         if ($client) {
             session(['clientid' =>  $client->clientid]);
+
             return view('customer', [
                 'qr_auth' => 1,
-                'check_day_start' => $env('CHECK_DAY_START',20),
-                'check_day_end' => $env('CHECK_DAY_END',25),
+                'check_day_start' => $check_day_start,
+                'check_day_end' => $check_day_end,
             ]);
         }
         else {
             return view('customer', [
                 'qr_auth' => 0,
-                'check_day_start' => $env('CHECK_DAY_START',20),
-                'check_day_end' => $env('CHECK_DAY_END',25),
+                'check_day_start' => $check_day_start,
+                'check_day_end' => $check_day_end,
             ]);
         }
     }

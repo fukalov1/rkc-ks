@@ -178,6 +178,11 @@
         mounted() {
 
         },
+        created() {
+            if (this.qr_auth) {
+                this.existAuth();
+            }
+        },
         computed: {
             curr_day() {
                 let today = new Date();
@@ -185,6 +190,26 @@
             }
         },
         methods: {
+            existAuth() {
+                axios({
+                    url: `/data/exist-auth`,
+                    method: 'POST'
+                })
+                    .then(response => {
+                        if (response.data.auth) {
+                            this.auth = response.data.auth;
+                            this.message = null;
+                            this.customer = response.data.customer
+                            this.getSlips();
+                        }
+                        else {
+                            this.message = response.data.message;
+                        }
+                    })
+                    .catch(error => {
+                        this.message = 'Данные пользователя не найдены';
+                    });
+            },
             onSubmitAuth() {
                 axios({
                     url: `/data/auth`,

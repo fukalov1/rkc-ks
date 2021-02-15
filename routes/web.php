@@ -26,8 +26,8 @@ Route::get('about', function () {
 Route::get('customer', function () {
     return view('customer', [
         'qr_auth' => 0,
-        'check_day_start' => env('CHECK_DAY_START', 15),
-        'check_day_end' => env('CHECK_DAY_END', 25),
+        'check_day_start' => \config('site.check_day_start'),
+        'check_day_end' => \config('site.check_day_end'),
         ]);
 });
 
@@ -47,6 +47,7 @@ Route::get('qr/{account}/{code}', [ClientController::class, 'authQR']);
 
 Route::group(['prefix' => 'data'], function() {
     Route::post('/auth', [ClientController::class, 'auth']);
+    Route::post('/exist-auth', [ClientController::class, 'existAuth']);
     Route::post('/slips', [ClientController::class, 'listSlips']);
     Route::post('/send', [ClientController::class, 'sendData']);
 });
