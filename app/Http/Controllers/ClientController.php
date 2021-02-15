@@ -75,15 +75,15 @@ class ClientController extends Controller
             session(['clientid' =>  $client->clientid]);
             return view('customer', [
                 'qr_auth' => 1,
-                'check_day_start' => env('CHECK_DAY_START'),
-                'check_day_end' => env('CHECK_DAY_END'),
+                'check_day_start' => env('CHECK_DAY_START',20),
+                'check_day_end' => env('CHECK_DAY_END',25),
             ]);
         }
         else {
             return view('customer', [
                 'qr_auth' => 0,
-                'check_day_start' => env('CHECK_DAY_START'),
-                'check_day_end' => env('CHECK_DAY_END'),
+                'check_day_start' => env('CHECK_DAY_START',20),
+                'check_day_end' => env('CHECK_DAY_END',25),
             ]);
         }
     }
