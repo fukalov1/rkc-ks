@@ -2105,6 +2105,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var owl_carousel_dist_assets_owl_carousel_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! owl.carousel/dist/assets/owl.carousel.css */ "./node_modules/owl.carousel/dist/assets/owl.carousel.css");
 /* harmony import */ var owl_carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! owl.carousel */ "./node_modules/owl.carousel/dist/owl.carousel.js");
 /* harmony import */ var owl_carousel__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(owl_carousel__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_ClientComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/ClientComponent */ "./resources/js/components/ClientComponent.vue");
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -2131,7 +2132,8 @@ window.fn = owl_carousel;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('client-component', __webpack_require__(/*! ./components/ClientComponent.vue */ "./resources/js/components/ClientComponent.vue").default);
+
+Vue.component('client-component', _components_ClientComponent__WEBPACK_IMPORTED_MODULE_3__.default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -2144,7 +2146,6 @@ var app = new Vue({
     var csrfToken = document.head.querySelector('meta[name="csrf-token"]');
 
     if (csrfToken) {
-      console.log('123');
       (axios__WEBPACK_IMPORTED_MODULE_0___default().defaults.headers.common["X-CSRF-TOKEN"]) = csrfToken.content;
     } else {
       console.log('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');

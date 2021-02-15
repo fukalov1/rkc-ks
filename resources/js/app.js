@@ -4,6 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+
 require('./bootstrap');
 
 window.Vue = require('vue').default;
@@ -28,7 +29,9 @@ window.fn = owl_carousel;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('client-component', require('./components/ClientComponent.vue').default);
+import ClientComponent from "./components/ClientComponent";
+
+Vue.component('client-component', ClientComponent);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -42,7 +45,6 @@ const app = new Vue({
         let csrfToken = document.head.querySelector('meta[name="csrf-token"]');
 
         if (csrfToken) {
-            console.log('123');
             axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken.content;
         } else {
             console.log('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
