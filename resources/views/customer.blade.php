@@ -34,9 +34,3 @@
     </section>
     </div>
 @stop
-<script>
-    import Client from "../js/components/ClientComponent";
-    export default {
-        components: {Client}
-    }
-</script>
