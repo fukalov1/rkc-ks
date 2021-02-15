@@ -7,8 +7,7 @@ use App\Http\Requests\ClientRequest;
 use App\Models\Client;
 use App\Models\RkcLs;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\App;
 
 class ClientController extends Controller
 {
@@ -63,6 +62,8 @@ class ClientController extends Controller
 
     public function authQR(ClientRequest $request)
     {
+        $env = App::environment();
+
         $account = $request->account;
         $code = $request->code;
 
@@ -75,15 +76,15 @@ class ClientController extends Controller
             session(['clientid' =>  $client->clientid]);
             return view('customer', [
                 'qr_auth' => 1,
-                'check_day_start' => env('CHECK_DAY_START',20),
-                'check_day_end' => env('CHECK_DAY_END',25),
+                'check_day_start' => $env('CHECK_DAY_START',20),
+                'check_day_end' => $env('CHECK_DAY_END',25),
             ]);
         }
         else {
             return view('customer', [
                 'qr_auth' => 0,
-                'check_day_start' => env('CHECK_DAY_START',20),
-                'check_day_end' => env('CHECK_DAY_END',25),
+                'check_day_start' => $env('CHECK_DAY_START',20),
+                'check_day_end' => $env('CHECK_DAY_END',25),
             ]);
         }
     }
