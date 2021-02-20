@@ -130,6 +130,7 @@ class ClientController extends Controller
                 foreach ($request->customer['devices'] as $item) {
                     $this->client
                         ->where('clientid', $item['clientid'])
+                        ->where('tooltype', $item['tooltype'])
                         ->where('toolid', $item['toolid'])
                         ->update(
                             [
