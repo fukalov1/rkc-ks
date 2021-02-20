@@ -4,7 +4,7 @@
         <div class="container">
             <header class="row top-menu-top">
                 <div class="accounts col-md-9 col-6">
-                    <li class="top_li"><span class="fa fa-phone"></span><a href="tel:+142 5897555">8(8482)55-18-07</a> </li>
+                    <li class="top_li"><span class="fa fa-phone"></span><a href="tel:88482551807">8(8482)55-18-07</a> </li>
                     <li class="top_li1"><span class="fa fa-envelope-o"></span> <a href="mailto:rkc-ks@yandex.ru" class="mail"> RKC-KS@YANDEX.RU</a>	</li>
                 </div>
 
