@@ -9,13 +9,31 @@
                         <li><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span> телефон/факс 55-18-07</a></li>
                         <li><a href="mailto:rkc-ks@yandex.ru" class="mail"><span class="fa fa-envelope-open-o"></span> rkc-ks@yandex.ru</a></li>
                     </ul>
+                    <div class="main-social-footer-29">
+                        <a href="#facebook" class="facebook"><span class="fa fa-facebook"></span></a>
+                        <a href="#twitter" class="twitter"><span class="fa fa-twitter"></span></a>
+                        <a href="#instagram" class="instagram"><span class="fa fa-instagram"></span></a>
+                        <a href="#google-plus" class="google-plus"><span class="fa fa-google-plus"></span></a>
+                        <a href="#linkedin" class="linkedin"><span class="fa fa-linkedin"></span></a>
+                    </div>
                 </div>
                 <div class="footer-list-29 footer-2">
                     <ul>
                         <h6 class="footer-title-29">Быстрые ссылки</h6>
-                        <li><a href="customer">Личный кабинет</a></li>
+                        <li><a href="contact.html">Личный кабинет</a></li>
 
                     </ul>
+                </div>
+                <div class="footer-list-29 footer-3">
+
+                    <h6 class="footer-title-29">Подписка </h6>
+                    <form action="#" class="subscribe" method="post">
+                        <input type="email" name="email" placeholder="Email" required="">
+                        <button><span class="fa fa-envelope-o"></span></button>
+                    </form>
+{{--                    <p>Subscribe and get our weekly newsletter</p>--}}
+{{--                    <p>We'll never share your email address</p>--}}
+
                 </div>
                 <div class="footer-list-29 footer-4">
                     <ul>

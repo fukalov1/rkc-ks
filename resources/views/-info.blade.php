@@ -19,8 +19,9 @@
                     <div class="cwp4-text col-lg-6">
                         <h4>Телефоны</h4>
                         <p>
-                            53-51-10 Бухгалтерия, паспортный стол<br/>
-                            70-60-22 Бухгалтерия, касса<br/>
+                            53-51-10 Бухгалтерия, паспортный стол (10, 12, 13, 14, 16 кв.)<br/>
+                            70-60-22 Бухгалтерия, касса (9 кв.)<br/>
+                            79-69-79 (10 кв.)<br/>
                             31-90-99 Диспетчер (круглосуточно)<br/>
                         </p>
                     </div>
@@ -29,10 +30,10 @@
                             Оплату за коммунальные услуги можно произвести:
                         </h4>
 
-                        В кассах "РКЦ-КС" наличный расчет (нет оплаты по платежным картам!) (по адресам: ул.40 лет Победы, д.88, ул.Туполева, 17А, офис 102)<br/>
+                        В кассах "РКЦ-КС" (по адресам: ул.40 лет Победы, д.88, ул.Дзержинского, д.27А, офис 18, ул.Туполева, 17А, офис 102)<br/>
                         В электронных терминалах магазинов города<br/>
-                        В терминалах банка "Почта Банк".<br/>
-                        В кассах, банкоматах "СБЕР".<br/>
+                        В кассах банка "ГЛОБЭКС".<br/>
+                        В кассах, банкоматах "СБЕРБАНК".<br/>
                         В кассах, банкоматах других банков дополнительно начисляется комиссия.<br/>
                     </div>
                 </div>
@@ -86,37 +87,46 @@
                             <tbody>
                             <tr>
                                 <td><strong><span>КАССА</span></strong><span style="font-size: x-small;"><span> </span></span></td>
-                                <td><span>по адресу:<br></span><span>ул.40 лет Победы, 88</span></p></td>
+                                <td>
+                                    <p><span>по адресу:<br></span><span>ул.40 лет Победы, 88</span></p>
+                                </td>
+                                <td><span style="font-size: x-small;"><span><span>по адресу:<br>ул. Дзержинского, 27А</span><br></span></span></td>
                                 <td valign="middle"><span>по адресу:<br>ул. Туполева, 17А</span><br></td>
                             </tr>
                             <tr>
                                 <td><span><strong><span>Понедельник</span></strong></span></td>
-                                <td><span><strong><span>10:00-17:45</span></strong></span></td>
+                                <td><span><strong><span>10:00-18:45</span></strong></span></td>
+                                <td><strong><span>КАССА НЕ РАБОТАЕТ</span></strong><br></td>
                                 <td><strong><span><span>8:00 - 16:00</span></span></strong></td>
                             </tr>
                             <tr>
                                 <td><span><strong><span>Вторник</span></strong></span></td>
-                                <td><strong><span>10:00 - 17:45</span></strong></td>
+                                <td><strong><span>КАССА НЕ РАБОТАЕТ</span></strong></td>
+                                <td><strong><span>09:00-17:45</span></strong><br></td>
                                 <td><strong><span><span>8:00 - 16:00</span></span></strong></td>
                             </tr>
                             <tr>
                                 <td><span><strong><span>Среда</span></strong></span></td>
                                 <td><span><strong><span>08:00 -16:45</span></strong></span></td>
+                                <td><strong><span>КАССА НЕ РАБОТАЕТ</span></strong><br></td>
                                 <td><strong><span><span>8:00 - 16:00</span></span></strong></td>
                             </tr>
                             <tr>
                                 <td><span><strong><span>Четверг</span></strong></span></td>
-                                <td><strong><span>08:00 - 16:45</span></strong></td>
+                                <td><strong><span>КАССА НЕ РАБОТАЕТ</span></strong></td>
+                                <td><strong><span>08:00 -16:45</span></strong><br></td>
                                 <td><strong><span><span>8:00 - 16:00</span></span></strong></td>
                             </tr>
                             <tr>
                                 <td><span><strong><span>Пятница</span></strong></span></td>
                                 <td><span><strong><span>08:00 -<strong><span>15:45</span></strong></span></strong></span></td>
+                                <td><strong><span>КАССА НЕ РАБОТАЕТ</span></strong><br></td>
                                 <td><strong><span><span>8:00 - 15:00</span></span></strong></td>
                             </tr>
                             <tr>
                                 <td><strong style="font-size: small; background-color: #e9eb78;"><span style="color: #ff0000;">Обед</span></strong></td>
                                 <td><strong style="font-size: small; text-align: center; background-color: #e9eb78;"><span style="color: #ff0000;">12:00 -13:00</span></strong></td>
+                                <td><br></td>
                                 <td><strong style="text-align: center; font-size: small; background-color: #e9eb78;"><span style="color: #ff0000;">12:00 -13:00</span></strong></td>
                             </tr>
                             </tbody>
@@ -124,13 +134,12 @@
 
                     </div>
                 </div>
-                <div class="cwp4-two row_">
+                <div class="cwp4-two row">
                     <div class="cwp4-text col-lg-6">
-
-
-						ОБРАЩАЕМ ВАШЕ ВНИМАНИЕ, что ежемесячно с 25-ого по 5-ое число кассы платежи не принимает
-						Прием показаний счетчиков:<br/>
-                        с 23 по 25 число месяца (включительно)<br/>
+                        <h4>
+                            Прием показаний счетчиков:<br/>
+                            с 23 по 25 число месяца (включительно)
+                        </h4>
 
                         На нашем сайте, в <a href="/customer">ЛИЧНОМ КАБИНЕТЕ</a><br/>
                         В ящиках на подъездах вашего дома<br/>
