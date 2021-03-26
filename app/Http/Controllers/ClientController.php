@@ -186,9 +186,17 @@ class ClientController extends Controller
     public function listSlips()
     {
 
+        $data = [];
         $id = session('clientid');
         if ($id) {
-            $uid = $this->rkc_ls->where('ls', session('clientid'))->first();
+            $uid = $this->rkc_ls->where('ls', $id)->first();
+
+            $data = [
+                'success' => false,
+                'message' => 'Данные не найдены'
+            ];
+
+
             if ($uid) {
                 $data['uid'] = $uid->GUID;
                 $data['slips'] = $this->listMonth();
