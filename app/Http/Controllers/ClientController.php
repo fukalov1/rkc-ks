@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ClientRequest;
 use App\Models\Client;
 use App\Models\RkcInfo;
+use App\Models\RkcKvitki;
 use App\Models\RkcLs;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -15,13 +16,16 @@ class ClientController extends Controller
 
     private $client;
     private $rkc_ls;
+    private $rkc_kvitki;
     private $info;
     private $setting;
 
-    public function __construct(Client $client, RkcInfo $info, RkcLs $rkc_ls, Setting $setting)
+    public function __construct(Client $client, RkcInfo $info,
+                                RkcKvitki $rkc_kvitki, RkcLs $rkc_ls, Setting $setting)
     {
         $this->client = $client;
         $this->rkc_ls = $rkc_ls;
+        $this->rkc_kvitki = $rkc_kvitki;
         $this->setting = $setting;
         $this->info = $info;
     }
@@ -189,17 +193,21 @@ class ClientController extends Controller
         $data = [];
         $id = session('clientid');
         if ($id) {
-            $uid = $this->rkc_ls->where('ls', $id)->first();
+            $slips = $this->rkc_kvitki
+                ->where('ls', $id)
+                ->orderByDesc('year')
+                ->orderByDesc('month')
+                ->get()
+                ->take(12);
 
             $data = [
                 'success' => false,
-                'message' => 'Данные не найдены'
+                'message' => 'Квитанции не найдены'
             ];
 
 
-            if ($uid) {
-                $data['uid'] = $uid->GUID;
-                $data['slips'] = $this->listMonth();
+            if ($slips) {
+                $data['slips'] = $slips;
                 $data['message'] = null;
             }
         }

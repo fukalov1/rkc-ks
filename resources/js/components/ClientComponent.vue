@@ -161,16 +161,10 @@
                                     <div class="col-12">
                                 <div class="row form-group">
                                     <div class="col-12 slips" v-for="(slip, index) in slips" :key="index">
-                                        <strong v-if="index===0">
-                                            Текущая квитанция<br/>
-                                        </strong>
-                                        <strong v-if="index===1">
-                                            Архив квитанций<br/>
-                                        </strong>
                                         <div col-12>
-                                            <a :href="`http://www.rkc-ks.ru/ex/get.php?clientid=${uid}&year=${slip.year}&month=${slip.month_id}`"
+                                            <a :href="`http://www.rkc-ks.ru/ex/get.php?clientid=${slip.ls}&year=${slip.year}&month=${slip.month}`"
                                                target="_blank">
-                                                {{ slip.month }} {{ slip.year }} г.
+                                                 Квитанция от {{ slip.date_txt }}.
                                             </a><br/>
                                         </div>
                                     </div>
@@ -320,13 +314,10 @@
                     method: 'POST'
                 })
                     .then(response => {
-                        if (response.data.uid) {
-                            this.uid = response.data.uid;
+
                             this.slips = response.data.slips;
-                        }
-                        else {
+
                             this.message = response.data.message;
-                        }
 
                     })
                     .catch(error => {
