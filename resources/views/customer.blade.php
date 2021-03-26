@@ -17,14 +17,22 @@
             <div class="container py-md-5">
                 <div class="cwp4-two row">
 
+{{--                    @if($auth)--}}
+{{--                    <div class="cwp4-text col-lg-12 text-right">--}}
+{{--                        <a href="/logout">--}}
+{{--                            <button class="btn btn-danger">выход</button>--}}
+{{--                        </a>--}}
+
+{{--                    </div>--}}
+{{--                    @endif--}}
                     <div class="cwp4-text col-lg-12">
 
                         <client-component
+                            :auth="{{ $auth }}"
                             :qr_auth="{{ $qr_auth }}"
                             :check_day_start="{{ $check_day_start }}"
                             :check_day_end="{{ $check_day_end }}"
                         />
-
 
                     </div>
 

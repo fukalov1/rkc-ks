@@ -28,12 +28,17 @@ Route::get('customer', function () {
 
     $settings = Setting::pluck('value', 'name')->all();
 
+     $auth = session('clientid') ? 1 : 0;
+
     return view('customer', [
         'qr_auth' => 0,
+        'auth' => $auth,
         'check_day_start' => $settings['check_day_start'],
         'check_day_end' => $settings['check_day_end'],
         ]);
 });
+
+Route::get('logout', [ClientController::class, 'logout']);
 
 Route::get('docs', function () {
     return view('docs');
@@ -51,6 +56,7 @@ Route::get('qr/{account}/{code}', [ClientController::class, 'authQR']);
 
 Route::group(['prefix' => 'data'], function() {
     Route::post('/auth', [ClientController::class, 'auth']);
+    Route::post('/customer', [ClientController::class, 'getCustomer']);
     Route::post('/exist-auth', [ClientController::class, 'existAuth']);
     Route::post('/slips', [ClientController::class, 'listSlips']);
     Route::post('/send', [ClientController::class, 'sendData']);

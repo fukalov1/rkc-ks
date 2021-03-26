@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ClientRequest;
 use App\Models\Client;
+use App\Models\RkcInfo;
 use App\Models\RkcLs;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -14,25 +15,25 @@ class ClientController extends Controller
 
     private $client;
     private $rkc_ls;
+    private $info;
     private $setting;
 
-    public function __construct(Client $client, RkcLs $rkc_ls, Setting $setting)
+    public function __construct(Client $client, RkcInfo $info, RkcLs $rkc_ls, Setting $setting)
     {
         $this->client = $client;
         $this->rkc_ls = $rkc_ls;
         $this->setting = $setting;
+        $this->info = $info;
+    }
+
+    public function logout(Request $request)
+    {
+        $request->session()->flush();
+        return view('index');
     }
 
     public function auth(ClientRequest $request)
     {
-        $data = [
-            'auth' => false,
-            'customer' => [
-                'clientname' => null,
-                'devices' => []
-                ]
-        ];
-
 
         $account = $request->account;
         $code = $request->code;
@@ -42,14 +43,12 @@ class ClientController extends Controller
             ->where('toolid', $code)
             ->first();
 
+
         if ($client) {
             session(['clientid' =>  $client->clientid]);
             $data = [
                 'auth' => true,
-                'customer' => [
-                    'clientname' => $client->clientname,
-                    'devices' => $client->where('clientid', $client->clientid)->get()
-                    ]
+                'message' => 'success'
             ];
         }
         else {
@@ -59,6 +58,37 @@ class ClientController extends Controller
             ];
         }
 
+        return $data;
+    }
+
+    public function getCustomer()
+    {
+
+        $id = session('clientid');
+        if ($id) {
+            $client = $this->client->where('clientid', $id)->first();
+
+            $info = $this->info
+                ->where('clientid', $id)->first();
+
+            if ($client) {
+                $data = [
+                    'auth' => true,
+                    'customer' => [
+                        'clientname' => $client->clientname,
+                        'balance' => $info->balanse,
+                        'address' => $info->address,
+                        'date' => $info->balanse_date,
+                        'devices' => $this->client->where('clientid', $id)->get()
+                    ]
+                ];
+            } else {
+                $data = [
+                    'auth' => false,
+                    'message' => 'Клиент не найден!'
+                ];
+            }
+        }
         return $data;
     }
 
@@ -105,6 +135,7 @@ class ClientController extends Controller
 
             return view('customer', [
                 'qr_auth' => 1,
+                'auth' => 1,
                 'check_day_start' => $settings['check_day_start'],
                 'check_day_end' => $settings['check_day_end'],
             ]);
@@ -142,7 +173,7 @@ class ClientController extends Controller
                 $data['message']  = 'Данные успешно обновлены!';
             }
             catch (\Throwable $exception) {
-                $data['message'] = $exception->getMessage();
+                $data['message'] = "Ошибка сохранения данных! Проверьте показания и повторите попытку.";
             }
 
         }
@@ -172,7 +203,7 @@ class ClientController extends Controller
     {
         $data = [];
         $months = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
-        for ($i=0; $i>=-2; $i--) {
+        for ($i=0; $i>=-11; $i--) {
             $data[] = [
                 'year' => date('Y', strtotime("$i month"))-1,
                 'month' => $months[date('m', strtotime("$i month"))-1],
