@@ -157,6 +157,7 @@ class ClientController extends Controller
             'message' => 'Клиент не авторизован'
         ];
 
+
         if (session('clientid')) {
             try {
                 foreach ($request->customer['devices'] as $item) {
@@ -184,18 +185,21 @@ class ClientController extends Controller
 
     public function listSlips()
     {
-        $data = [
-            'success' => false,
-            'message' => 'Клиент не авторизован'
-        ];
 
-        if (session('clientid')) {
+        $id = session('clientid');
+        if ($id) {
             $uid = $this->rkc_ls->where('ls', session('clientid'))->first();
             if ($uid) {
                 $data['uid'] = $uid->GUID;
                 $data['slips'] = $this->listMonth();
                 $data['message'] = null;
             }
+        }
+        else {
+            $data = [
+                'success' => false,
+                'message' => 'Клиент не авторизован'
+            ];
         }
         return $data;
     }
