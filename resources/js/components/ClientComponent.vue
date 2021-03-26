@@ -148,9 +148,7 @@
                                                 v-if="curr_day>=check_day_start && curr_day<=check_day_end">
                                             сохранить
                                         </button>
-                                        <h5 class="text-danger" v-else>
-                                            {{ message }}
-                                        </h5>
+
                                     </div>
                                 </div>
                             </form>
@@ -196,8 +194,8 @@
         name: 'ClientComponent',
         props: {
             auth: {
-                type: Boolean,
-                default: false
+                type: Number,
+                default: 0
             },
             qr_auth: {
                 type: Number,

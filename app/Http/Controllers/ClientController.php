@@ -47,13 +47,13 @@ class ClientController extends Controller
         if ($client) {
             session(['clientid' =>  $client->clientid]);
             $data = [
-                'auth' => true,
+                'auth' => 1,
                 'message' => 'success'
             ];
         }
         else {
             $data = [
-                'auth' => false,
+                'auth' => 0,
                 'message' => 'Клиент не найден!'
             ];
         }
@@ -73,7 +73,7 @@ class ClientController extends Controller
 
             if ($client) {
                 $data = [
-                    'auth' => true,
+                    'auth' => 1,
                     'customer' => [
                         'clientname' => $client->clientname,
                         'balance' => $info->balanse,
@@ -84,7 +84,7 @@ class ClientController extends Controller
                 ];
             } else {
                 $data = [
-                    'auth' => false,
+                    'auth' => 0,
                     'message' => 'Клиент не найден!'
                 ];
             }
@@ -100,7 +100,7 @@ class ClientController extends Controller
 
         if ($client) {
             $data = [
-                'auth' => true,
+                'auth' => 1,
                 'customer' => [
                     'clientname' => $client->clientname,
                     'devices' => $client->where('clientid', $client->clientid)->get()
@@ -109,7 +109,7 @@ class ClientController extends Controller
         }
         else {
             $data = [
-                'auth' => false,
+                'auth' => 0,
                 'message' => 'Клиент не найден!'
             ];
         }
@@ -143,6 +143,7 @@ class ClientController extends Controller
         else {
             return view('customer', [
                 'qr_auth' => 0,
+                'auth' => 0,
                 'check_day_start' => $settings['check_day_start'],
                 'check_day_end' => $settings['check_day_end'],
             ]);
