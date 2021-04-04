@@ -83,7 +83,10 @@ class ClientController extends Controller
                         'balance' => $info->balanse,
                         'address' => $info->address,
                         'date' => $info->balanse_date,
-                        'devices' => $this->client->where('clientid', $id)->get()
+                        'devices' => $this->client
+                            ->where('clientid', $id)
+                            ->where('tooltype', '<>', 'А')
+                            ->get()
                     ]
                 ];
             } else {
