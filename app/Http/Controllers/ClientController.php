@@ -197,7 +197,8 @@ class ClientController extends Controller
         $id = session('clientid');
         if ($id) {
             $slips = $this->rkc_kvitki
-                ->select('ls_date', 'ls', 'guid', 'date', 'year', 'month', 'date_txt', 'dwltime')
+                ->select('ls_date', 'ls', 'date', 'year', 'month', 'date_txt', 'dwltime')
+                ->with('links')
                 ->where('ls', $id)
                 ->orderByDesc('year')
                 ->orderByDesc('month')

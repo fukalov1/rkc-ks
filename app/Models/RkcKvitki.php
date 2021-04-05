@@ -11,4 +11,10 @@ class RkcKvitki extends Model
 
     protected $table = 'rkc_kvitki';
 
+
+    public function links()
+    {
+        return $this->belongsTo(RkcLs::class, 'ls', 'ls');
+    }
+
 }
