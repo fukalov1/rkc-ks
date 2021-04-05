@@ -162,7 +162,7 @@
                                 <div class="row form-group">
                                     <div class="col-12 slips" v-for="(slip, index) in slips" :key="index">
                                         <div col-12>
-                                            <a :href="`http://www.rkc-ks.ru/ex/get.php?clientid=${slip.ls}&year=${slip.year}&month=${slip.month}`"
+                                            <a :href="`http://www.rkc-ks.ru/ex/get.php?clientid=${slip.guid}&year=${slip.year}&month=${slip.month}`"
                                                target="_blank">
                                                  Квитанция от {{ slip.date_txt }}.
                                             </a><br/>

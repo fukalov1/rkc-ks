@@ -15,5 +15,11 @@ class Client extends Model
 
     public $timestamps = false;
 
+    public function accounts()
+    {
+        return $this->belongsTo(RkcLs::class, 'ls', 'clientid');
+    }
+
+
 
 }
