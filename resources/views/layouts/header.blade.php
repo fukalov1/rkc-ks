@@ -27,25 +27,13 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto">
+                    @if(isset($pages))
+                    @foreach($pages as $page)
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Главная</a>
+                            <a class="nav-link" href="/{{ $page->url }}">{{ $page->name }}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">О компании</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/info">Информация</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/docs">Законодательство</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/news">Объявления</a>
-                    </li>
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link" href="contact.html"></a>--}}
-{{--                    </li>--}}
+                    @endforeach
+                    @endif
                 </ul>
 {{--                <form action="search-results.html" class="form-inline position-relative my-2 my-lg-0">--}}
 {{--                    <input class="form-control search" type="search" placeholder="Search here..." aria-label="Search" required="">--}}

@@ -16,10 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('index');
-});
-
+//Route::get('/', function () {
+//    return view('index');
+//});
+//
 Route::get('about', function () {
     return view('about');
 });
@@ -40,17 +40,17 @@ Route::get('customer', function () {
 
 Route::get('logout', [ClientController::class, 'logout']);
 
-Route::get('docs', function () {
-    return view('docs');
-});
-
+//Route::get('docs', function () {
+//    return view('docs');
+//});
+//
 Route::get('info', function () {
     return view('info');
 });
-
-Route::get('news', function () {
-    return view('news');
-});
+//
+//Route::get('news', function () {
+//    return view('news');
+//});
 
 Route::get('qr/{account}/{code}', [ClientController::class, 'authQR']);
 

@@ -5,9 +5,9 @@
                 <div class="footer-list-29 footer-1">
                     <h6 class="footer-title-29">Контакты</h6>
                     <ul>
-                        <li><p><span class="fa fa-map-marker"></span> г. Тольятти Ул. Автостроителей, 63</p></li>
-                        <li><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span> телефон/факс 55-18-07</a></li>
-                        <li><a href="mailto:rkc-ks@yandex.ru" class="mail"><span class="fa fa-envelope-open-o"></span> rkc-ks@yandex.ru</a></li>
+                        <li><p><span class="fa fa-map-marker"></span> {{ config('address') }}</p></li>
+                        <li><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span> {{ config('phones') }}</a></li>
+                        <li><a href="mailto:{{ config('email') }}" class="mail"><span class="fa fa-envelope-open-o"></span> {{ config('email') }}</a></li>
                     </ul>
                 </div>
                 <div class="footer-list-29 footer-2">
@@ -20,16 +20,16 @@
                 <div class="footer-list-29 footer-4">
                     <ul>
                         <h6 class="footer-title-29">Меню</h6>
-                        <li><a href="/">Главная</a></li>
-                        <li><a href="/about">О компании</a></li>
-                        <li><a href="/info">Информация</a></li>
-                        <li><a href="/news"> Объявления</a></li>
-{{--                        <li><a href="contact.html">Контакты</a></li>--}}
+                        @if(isset($pages))
+                        @foreach($pages as $page)
+                            <li><a href="/{{ $page->url }}"> {{ $page->name }}</a></li>
+                        @endforeach
+                        @endif
                     </ul>
                 </div>
             </div>
             <div class="d-grid grid-col-2 bottom-copies">
-                <p class="copy-footer-29">© 2020 ООО “РКЦ-Консалтинг Сервис”. Все права защищены.</p>
+                <p class="copy-footer-29">© {{ date('Y', time())  }} ООО “РКЦ-Консалтинг Сервис”. Все права защищены.</p>
                 <ul class="list-btm-29">
                     <li><a href="#link">Персональные данные</a></li>
                     <li><a href="#link">Пользовательское соглашение</a></li>
