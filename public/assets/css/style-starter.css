@@ -9470,7 +9470,6 @@ a.text-dark:hover, a.text-dark:focus {
   color: rgba(255, 255, 255, 0.5) !important; }
 
 .text-hide {
-  font: 0/0 a;
   color: transparent;
   text-shadow: none;
   background-color: transparent;
@@ -9638,8 +9637,8 @@ span.diff {
   outline: none; }
 
 .btn-secondary:focus, .btn-secondary.focus {
-  background-color: none !important;
-  border-color: none !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
   box-shadow: none !important; }
 
 .btn-theme1 {
@@ -9656,12 +9655,12 @@ span.diff {
   outline: none; }
 
 .btn-secondary:focus, .btn-secondary.focus {
-  background-color: none !important;
-  border-color: none !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
   box-shadow: none !important; }
 
 .btn-theme1:focus {
-  border-color: none !important; }
+  border-color: transparent !important; }
 
 .btn-theme2 {
   padding: 10px 30px;
@@ -9679,7 +9678,7 @@ span.diff {
   color: var(--opposite-color); }
 
 .btn-theme2:focus {
-  border-color: none !important; }
+  border-color: transparent !important; }
 
 .btn-theme3 {
   padding: 6px 16px;
@@ -9697,7 +9696,7 @@ span.diff {
   color: var(--opposite-color); }
 
 .btn-theme3:focus {
-  border-color: none !important; }
+  border-color: transparent !important; }
 
 .btn-theme4 {
   padding: 6px 16px;
@@ -9716,11 +9715,11 @@ span.diff {
   color: var(--white-color); }
 
 .btn-theme4:focus {
-  border-color: none !important; }
+  border-color: transparent !important; }
 
 .btn-secondary:focus, .btn-secondary.focus {
-  background-color: none !important;
-  border-color: none !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
   box-shadow: none !important; }
 
 a.read {
@@ -11181,6 +11180,25 @@ button.owl-next {
       font-size: 20px;
       line-height: 25px; } }
 
+
+.three-grids-columns a {
+    padding: 6px 16px;
+    color: var(--theme-color);
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 600;
+    transition: 0.3s ease-in;
+    border: 2px solid var(--opposite-color);
+    background: var(--opposite-color); }
+
+.three-grids-columns a:hover {
+    background: var(--theme-color);
+    border: 2px solid var(--theme-color);
+    color: var(--opposite-color); }
+
+.three-grids-columns a:focus {
+    border-color: transparent !important; }
+
 .w3l-index1 {
   background: #fff; }
 
@@ -12082,6 +12100,46 @@ button.owl-next {
     margin-top: 4em; }
   .w3l-footer-29-main .bottom-source {
     margin-top: 40px; } }
+
+.page-block-doc .container  {
+    padding: 4em;
+}
+
+.page-block-doc .container ul,
+.page-block-doc .container ol {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.page-block-doc .container ul li:before,
+.page-block-doc .container ol li:before {
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAACXBIWXMAAAsTAAALEwEAmpwYAAABRUlEQVR4nL3WvytHYRTH8deilMHEgmJgtRgsJqPBZlBMLAbZTDYT8geY2ORHFj92BhMlkzJQSoniWwzC1VOP0teP+73XvT51ts8573uec56ey1e1Yh0VJClxgWE5FCB3NQCSqpjOClqPidtoSfH2VcFms4A+jit0lqb6bzpbrBX0kZDVn3yK+f8CJZj5L1CCkSJBBymrXxioWg0YqKVOmmEFV+j4rUgRoCfsYKxs0EG8a0Nlg0bxiuayQf14Q2/ZoIU4o1M0lgWqwyW6MYF99MTFmEJXUaBxHGISW3iJ3jCzI9wUAWrHNR6xhMG4EGFWqzjB3F9ATVjGM3Zr2LbcoGOc4TZ2pSzQHs7j0LMo+et6FwaqZHjKf1JbrHH/owOb0bSbE9YWjzvU2PjNGC5dnt+t6gg1OtO+KnSyhoccgJATOvkCeQeQF8wzdmt4DAAAAABJRU5ErkJggg==);
+    font-family: "Font Awesome 5 Free";
+    font-size: 29px;
+    float: left;
+    margin-top: -5px;
+    margin-left: -30px;
+    color: var(--text-color)
+}
+
+.page-block-doc .container ul li,
+.page-block-doc .container ol li {
+    font-size: 18px;
+    padding: 8px 0;
+    display: block;
+}
+
+.page-block-doc .container ul li a,
+.page-block-doc .container ol li a {
+    text-decoration: none;
+    color: var(--text-color);
+    border-bottom: 1px dashed var(--text-color);
+}
 
 .w3l-content-with-photo-4 {
   /*-- content-with-photo4 block --*/ }

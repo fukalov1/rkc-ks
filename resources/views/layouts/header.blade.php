@@ -4,8 +4,8 @@
         <div class="container">
             <header class="row top-menu-top">
                 <div class="accounts col-md-9 col-6">
-                    <li class="top_li"><span class="fa fa-phone"></span><a href="tel:8848253-51-10">8(8482)53-51-10</a> </li>
-                    <li class="top_li1"><span class="fa fa-envelope-o"></span> <a href="mailto:rkc-ks@yandex.ru" class="mail"> RKC-KS@YANDEX.RU</a>	</li>
+                    <li class="top_li"><span class="fa fa-phone"></span><a href="tel:{{ config('phone') }}">{{ config('phone') }}</a> </li>
+                    <li class="top_li1"><span class="fa fa-envelope-o"></span> <a href="mailto:{{ config('email') }}" class="mail"> {{ config('email') }}</a>	</li>
                 </div>
 
             </header>
@@ -18,7 +18,7 @@
         <div class="container">
 {{--            <a class="navbar-brand" href="index.html"><span class="fa fa-pencil-square-o "></span>РКЦ-Консалтинг Сервис</a>--}}
           <a class="navbar-brand" href="/">
-              <img src="{{asset('assets/images/logo.png')}}" alt="РКЦ-Консалтинг Сервис" title="РКЦ-Консалтинг Сервис" style="height:35px;" />
+              <img src="{{asset('assets/images/logo.png')}}" alt="{{ config('company_name') }}" title="{{ config('company_name') }}" style="height:35px;" />
           </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

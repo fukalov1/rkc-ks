@@ -59,6 +59,11 @@ class PageController extends Controller
         $data['pages'] = $this->page->getMenu();
         $data['directs'] = $this->page->where('number_direct','>', '0')->orderBy('number_direct')->get();
         $data['page_blocks'] = $this->pageBlock->where('page_id', $page->id)->orderBy('orders')->get();
+        if ($page->id == 1) {
+            $data['directs'] = $this->pageBlock
+                ->orWhere('page_id', 6)
+                ->orderBy('orders')->get();
+        }
 //        $data['center_news'] = $this->centerNew->orderBy('date', 'desc')->inRandomOrder()->limit($limit_news)->get();
         $data['banners'] = $banners;
         $data['bread_crumbs'] = '<a href="/">Главная</a> /'.$this->bread_crubs;

@@ -35,7 +35,7 @@ class PageBlockController extends Controller
 
         return $content
             ->header('Страница '.$this->page_name)
-            ->description(' список текстовых блоков')
+            ->description(' список текстовых блоков (абзацев)')
             ->body($this->bread_crubs )
             ->body($this->grid());
     }
@@ -52,7 +52,7 @@ class PageBlockController extends Controller
         $this->getHeader();
         return $content
             ->header('Страница '.$this->page_name)
-            ->description(' список текстовых блоков')
+            ->description(' список текстовых блоков (абзацев)')
             ->body($this->detail($id));
     }
 
@@ -68,7 +68,7 @@ class PageBlockController extends Controller
         $this->getHeader();
         return $content
             ->header('Страница '.$this->page_name)
-            ->description(' список текстовых блоков')
+            ->description(' список текстовых блоков (абзацев)')
             ->body($this->form()->edit($id));
     }
 
@@ -83,7 +83,7 @@ class PageBlockController extends Controller
         $this->getHeader();
         return $content
             ->header('Страница '.$this->page_name)
-            ->description(' список текстовых блоков')
+            ->description(' список текстовых блоков (абзацев)')
             ->body($this->form());
     }
 
@@ -101,12 +101,12 @@ class PageBlockController extends Controller
 //        $grid->page_id('Page id');
         $grid->orders('Номер показа')->editable();
 //        $grid->header('Заголовок');
-        $grid->submenu('Пункт подменю')->display(function () {
-            $str = 'нет';
-            if ($this->submenu)
-                $str = 'да';
-            return $str;
-        });
+//        $grid->submenu('Пункт подменю')->display(function () {
+//            $str = 'нет';
+//            if ($this->submenu)
+//                $str = 'да';
+//            return $str;
+//        });
         $grid->text('Текст')->display(function ($text) {
             return (\Illuminate\Support\Str::limit(strip_tags($text), 250, '...'));
 //            return '<pre>'.substr($this->text,0,250).'</pre>';

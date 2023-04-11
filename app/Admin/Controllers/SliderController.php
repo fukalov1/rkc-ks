@@ -2,8 +2,8 @@
 
 namespace App\Admin\Controllers;
 
-use App\Page;
-use App\Slider;
+use App\Models\Page;
+use App\Models\Slider;
 use Encore\Admin\Facades\Admin;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\HasResourceActions;
@@ -158,6 +158,7 @@ class SliderController extends Controller
         $form = new Form(new Slider);
 
         $form->hidden('page_id')->value(session('page_id'));
+        $form->hidden('uid')->value(0);
         $form->hidden('page_block_id')->value(session('page_block_id'));
         $form->text('name', 'Наименование');
         $form->radio('type', 'Тип текстового блока')

@@ -113,20 +113,20 @@ class PageController extends Controller
             $count = count($page_blocks);
             return "<a href='/admin/page_blocks?set={$this->id}' title='перейти к тексту страницы'><span class='label label-warning'>{$count}</span></a>";
         });
-        $grid->content('Показ в блоке направлений')->display(function ($number) {
-            $str = '';
-            if ($this->number_direct>0) {
-                $str = "да";
-            }
-            return $str;
-        });
-        $grid->news_branch('Новости')->display(function ($number) {
-            $str = '';
-            if ($this->news_branch>0) {
-                $str = "<a href='/admin/news?set=".$this->id."'>управлять</a>";
-            }
-            return $str;
-        });
+//        $grid->content('Показ в блоке направлений')->display(function ($number) {
+//            $str = '';
+//            if ($this->number_direct>0) {
+//                $str = "да";
+//            }
+//            return $str;
+//        });
+//        $grid->news_branch('Новости')->display(function ($number) {
+//            $str = '';
+//            if ($this->news_branch>0) {
+//                $str = "<a href='/admin/news?set=".$this->id."'>управлять</a>";
+//            }
+//            return $str;
+//        });
 //        $grid->updated_at('Обновллено');
 
         return $grid;
@@ -167,12 +167,12 @@ class PageController extends Controller
         $form = new Form(new Page);
 
         $form->tab('Основная', function ($form) {
-            $form->switch('relation', 'Вложения');
-            $form->text('name', 'Наименование');
-            $form->number('order', 'Номер показа в меню');
+            $form->hidden('relation ', 'Вложения')->value(0);
+            $form->number('order', 'Номер показа в меню')->default(1);
+            $form->text('name', 'Наименование')->required();
             $form->image('image', 'Фото для направления (255x255px)');
-            $form->number('number_direct', 'Номер показа в направлениях (если ноль - не показывать)');
-            $form->switch('news_branch', 'Раздел новостей');
+            $form->hidden('number_direct')->value(0);
+            $form->hidden('news_branch', 'Раздел новостей')->value(0);
 
 //            $form->hasMany('page_blocks', 'Блоки страниц', function (Form\NestedForm $form) {
 //                $form->number('orders', 'Номер показа нас странице');
