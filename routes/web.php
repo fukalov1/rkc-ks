@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Models\Page;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Route;
 
@@ -30,7 +31,10 @@ Route::get('customer', function () {
 
      $auth = session('clientid') ? 1 : 0;
 
+    $page = Page::find(1);
+
     return view('customer', [
+        'pages' => $page->getMenu(),
         'qr_auth' => 0,
         'auth' => $auth,
         'check_day_start' => $settings['check_day_start'],
