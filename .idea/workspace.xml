@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2e00e434-3c65-41a7-a041-633a1d0aaa51" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/PageBlockController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/PageBlockController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/SliderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/SliderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/SliderItemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/SliderItemController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style-starter.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style-starter.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +200,9 @@
       <workItem from="1616693710573" duration="12434000" />
       <workItem from="1616787553126" duration="4249000" />
       <workItem from="1617539998869" duration="4968000" />
-      <workItem from="1681121964353" duration="19525000" />
+      <workItem from="1681121964353" duration="20246000" />
+      <workItem from="1681215367906" duration="177000" />
+      <workItem from="1681296719648" duration="95000" />
     </task>
     <servers />
   </component>

@@ -31,8 +31,8 @@
             <div class="d-grid grid-col-2 bottom-copies">
                 <p class="copy-footer-29">© {{ date('Y', time())  }} {{ config('company_name') }}. Все права защищены.</p>
                 <ul class="list-btm-29">
-                    <li><a href="#link">Персональные данные</a></li>
-                    <li><a href="#link">Пользовательское соглашение</a></li>
+                    <li><a href="/personalnye-dannye">Персональные данные</a></li>
+                    <li><a href="/polzovatelskoe-soglashenie">Пользовательское соглашение</a></li>
 
                 </ul>
             </div>
